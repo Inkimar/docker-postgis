@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  postgis:
+    image: mdillon/postgis:9.6-alpine
+    container_name: postgis
+    env_file: ./env/.envpostgis
+    volumes:
+      - db_data_postgis:/var/lib/postgresql/data
+      - ./postgis/pg_hba.conf:/etc/postgresql/9.6/main/pg_hba.conf
+      - ./postgis/layersdb.sql:/docker-entrypoint-initdb.d/layersdb.sql
+    ports:
+      - "5432:5432" 
+
+volumes:
+  db_data_postgis:
