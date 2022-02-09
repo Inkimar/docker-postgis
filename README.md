@@ -1,5 +1,9 @@
 # docker-postgis
 
+2022-02-09
+- PostgreSQL 13.5
+- PostGIS 3.1
+- 
 ```
 root@6693969f855e:/# psql -U layers
 psql (13.5 (Debian 13.5-1.pgdg110+1))
@@ -18,3 +22,6 @@ layers=# select PostGIS_Version();
 (1 row)
 
 ```
+## Before running 
+- copy envpostgis.template  to .envpostgis
+- update the credentials in .envpostgis
